@@ -30,7 +30,7 @@ This R package uses the efficient libraries of [JDemetra+ v3](https://github.com
 
 # Installation settings
 
-This package relies on the specific Java libraries of [JDemetra+ v3](https://github.com/jdemetra/jdplus-nowcasting) and on the package [rjd3toolkit](https://github.com/rjdemetra/rjd3toolkit) of [rjdverse](https://github.com/rjdverse). Prior the installation, you must ensure to have a Java version >= 17.0 on your computer. If you need to use a portable version of Java to fill this request, you can follow the instructions in the [installation manual](https://jdemetra-new-documentation.netlify.app/#Rconfig).
+This package relies on the specific Java libraries of [JDemetra+ v3](https://github.com/jdemetra/jdplus-nowcasting) and on the package [rjd3toolkit](https://github.com/rjdemetra/rjd3toolkit) of [rjdverse](https://github.com/rjdverse?view_as=public). Prior the installation, you must ensure to have a Java version >= 17.0 on your computer. If you need to use a portable version of Java to fill this request, you can follow the instructions in the [installation manual](https://jdemetra-new-documentation.netlify.app/#Rconfig).
 
 In addition to a Java version >= 17.0, you must have a recent version of the R packages rJava (>= 1.0.6) and RProtobuf (>=0.4.17) that you can download from CRAN. 
 
