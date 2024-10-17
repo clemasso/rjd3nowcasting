@@ -159,7 +159,7 @@ DFMFORECASTS<-'JD3_DfmForecasts'
   # Factors
   factors<-stats::ts(dfm_rslts$factors, frequency=dfm_rslts$freq, start=dfm_rslts$start)
   factors_cnames<-character()
-  for(i in 1:ncol(factors)){
+  for(i in seq_len(ncol(factors))){
     factors_cnames[i]<-paste0("F",i)
   }
   colnames(factors)<-factors_cnames
