@@ -30,7 +30,7 @@ This R package uses the efficient libraries of [JDemetra+ v3](https://github.com
 
 # Installation settings
 
-This package relies on the specific Java libraries of [JDemetra+ v3](https://github.com/jdemetra/jdplus-nowcasting) and on the package [rjd3toolkit](https://github.com/rjdemetra/rjd3toolkit) of [rjdverse](https://github.com/rjdverse). Prior the installation, you must ensure to have a Java version >= 17.0 on your computer. If you need to use a portable version of Java to fill this request, you can follow the instructions in the [installation manual](https://jdemetra-new-documentation.netlify.app/#Rconfig).
+This package relies on the specific Java libraries of [JDemetra+ v3](https://github.com/jdemetra/jdplus-nowcasting) and on the package [rjd3toolkit](https://github.com/rjdemetra/rjd3toolkit) of [rjdverse](https://github.com/rjdverse?view_as=public). Prior the installation, you must ensure to have a Java version >= 17.0 on your computer. If you need to use a portable version of Java to fill this request, you can follow the instructions in the [installation manual](https://jdemetra-new-documentation.netlify.app/#Rconfig).
 
 In addition to a Java version >= 17.0, you must have a recent version of the R packages rJava (>= 1.0.6) and RProtobuf (>=0.4.17) that you can download from CRAN. 
 
@@ -73,15 +73,15 @@ Detailed information concerning each step follows below the example.
 ## 1. Data
 set.seed(100)
 data0 <- stats::ts(
-    data = matrix(rnorm(500), 100, 5), 
-    frequency = 12, 
+    data = matrix(rnorm(500), 100, 5),
+    frequency = 12,
     start = c(2010, 1)
 )
 data0[100, 1] <- data0[99:100, 2] <- data0[(1:100)[-seq(3, 100, 3)], 5] <- NA
 
 data1 <- stats::ts(
-    data = rbind(data0, c(NA, NA, 1, 1, NA)), 
-    frequency = 12, 
+    data = rbind(data0, c(NA, NA, 1, 1, NA)),
+    frequency = 12,
     start = c(2010, 1)
 )
 data1[100,1] <- data1[99,2] <- 1
@@ -97,12 +97,12 @@ dfm0 <- create_model(nfactors=2,
                      var_init = "Unconditional")
 
 ### Update model
-# ! Recall: due to potential presence of local minimum  and lack of  
-# identification issue, it is always better to start from a previously 
-# estimated model when available.  
+# ! Recall: due to potential presence of local minimum  and lack of
+# identification issue, it is always better to start from a previously
+# estimated model when available.
 est0 <- estimate_em(dfm0, data0) # cfr. next step
 
-dfm1 <- est0$dfm # R object (list) to potentially save from one time to another  
+dfm1 <- est0$dfm # R object (list) to potentially save from one time to another
 # or, equivalently,
 dfm1 <- create_model(nfactors=2,
                      nlags=2,

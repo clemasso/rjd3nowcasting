@@ -100,7 +100,7 @@ dfm0_init <- create_model(nfactors=2,
 
 ### Update an existing model
 est0 <- estimate_em(dfm0_init, data0_ts) # cfr. next step
-dfm1_init <- est0$dfm # R object (list) to save from one time to another 
+dfm1_init <- est0$dfm # R object (list) to save from one time to another
 # or, equivalently,
 # dfm1_init <- create_model(nfactors=2,
 #                           nlags=2,
@@ -118,7 +118,7 @@ dfm1_init <- est0$dfm # R object (list) to save from one time to another
 ``` r
 est0 <- estimate_ml(dfm0_init, data0_ts)
 # or est0<-estimate_em(dfm0_init, data0_ts)
-# or est0<-estimate_pca(dfm0_init, data0_ts) # to be avoided unless you only have monthly data 
+# or est0<-estimate_pca(dfm0_init, data0_ts) # to be avoided unless you only have monthly data
 ```
 
 ### 4. Get results
@@ -174,7 +174,7 @@ plot(fcsts0, series_name = "FR_PVI")
 <img src="man/figures/README-results-1.png" width="100%" style="display: block; margin: auto;" />
 
 ``` r
-# Note: impact of Covid-19 on the model estimate could be eliminated by treating affected indicators as missing data during this period. This has not been done in this example. 
+# Note: impact of Covid-19 on the model estimate could be eliminated by treating affected indicators as missing data during this period. This has not been done in this example.
 ```
 
 #### News analysis
